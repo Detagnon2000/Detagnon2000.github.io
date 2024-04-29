@@ -1,4 +1,4 @@
 layout:page
 title:Project
-permalink:/about/contact/
+permalink:/contact/
 Now let see
