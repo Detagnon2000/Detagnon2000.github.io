@@ -1,4 +1,4 @@
 layout: page
 title: Project
-permalink: /main
+permalink: /main/test_new_page
 Now let see what
