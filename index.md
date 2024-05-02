@@ -2,7 +2,7 @@
 layout: default
 ---
 
-.
+![image](Screenshot.png)
 # My CV
 Download my CV [here](https://drive.google.com/uc?export=download&id=1Xndrc1c09wFRtfyx5b3BSpxr7IldHnnl)
 # Projects
