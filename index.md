@@ -2,9 +2,9 @@
 layout: default
 ---
 
-
+.
 # My CV
-Dowload my CV [here](https://drive.google.com/uc?export=download&id=1Xndrc1c09wFRtfyx5b3BSpxr7IldHnnl)
+Download my CV [here](https://drive.google.com/uc?export=download&id=1Xndrc1c09wFRtfyx5b3BSpxr7IldHnnl)
 # Projects
 ## [Machine Learning](https://github.com/Detagnon2000/Machine-Learning)
 
