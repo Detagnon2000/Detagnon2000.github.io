@@ -5,7 +5,7 @@ layout: default
 ![image](Screenshot.png)
 
 # My CV
-Download my CV [here](https://drive.google.com/uc?export=download&id=1Xndrc1c09wFRtfyx5b3BSpxr7IldHnnl)
+Download my CV [here](https://drive.google.com/file/d/1bibd5lA8wqe9od7XY4CWxa3caT_g-IYa/view?usp=sharing)
 
 # Projects
 
