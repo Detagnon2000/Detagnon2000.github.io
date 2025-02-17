@@ -16,9 +16,14 @@ layout: default
 
 <!--  comment   -->
 <table style="width:100%; border: none;">
+  <tr> 
+  <td style="width: 25%; vertical-align: top;">Data Science </td>
+   <td style="width: 25%; vertical-align: top;">Infectious Diseases Modeling </td>
+  <td style="width: 25%; vertical-align: top;"> Large Language Model </td>
+  </tr>
   <tr>
     <td style="width: 25%; vertical-align: top;">
-      <h2>Data Science</h2>
+      <!--<h2>Data Science</h2>-->
       <ul>
      <li> <a href="https://github.com/Detagnon2000/Machine-Learning/tree/main/SML" target="_blank">Statistical Machine Learning</a></li>
      <li> <a href="https://github.com/Detagnon2000/Machine-Learning/tree/main/Neural%20Network" target="_blank">Neural Network</a></li>
@@ -28,7 +33,7 @@ layout: default
       <!--<p>This content is on the left side.</p>-->
     </td>
     <td style="width: 25%; vertical-align: top;">
-      <h2>Infectious Diseases Modeling</h2>
+<!--<h2>Diseases Modeling</h2>-->
       <ul>
 
 <li> <a href="https://z292kc-bernic-gbaguidi.shinyapps.io/Simulation_SIR_model/" target="_blank">Shiny Web App to simulate an SIR Model</a>
@@ -43,7 +48,7 @@ layout: default
       <p></p>
     </td>
     <td style="width: 25%; vertical-align: top;">
-      <h2>Large Language Model</h2>
+      <!--<h2>Large Language Model</h2>-->
    <ul>
       <li> <a href="https://huggingface.co/spaces/Detagnon/GB___X4" target="_blank">RAG-Based ChatBot for exam generation(HuggingFace)</a> </li>
      <li> <a href="https://huggingface.co/spaces/Detagnon/Bot_numeriq_2" target="_blank">RAG-Based ChatBot for digital code in Benin(HuggingFace) </a> </li>
