@@ -11,7 +11,21 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
+
+<style>
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .section {
+    width: 45%;
+  }
+</style>
+
+    
   </head>
+  
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
