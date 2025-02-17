@@ -2,7 +2,8 @@
 layout: default
 ---
 
-![image](picAIMS.png)
+<img src="picAIMS.png" alt="image" height="200" >
+<!--[image](picAIMS.png)-->
 
 # My CV
 Download my CV [here](https://drive.google.com/file/d/1bibd5lA8wqe9od7XY4CWxa3caT_g-IYa/view?usp=sharing)
