@@ -20,8 +20,8 @@ layout: default
 <table style="width:100%; border: none;">
   <tr> 
   <td style="width: 25%; vertical-align: top;font-weight: bold; background-color: #f0f0f0; color: #333;"> Data Science </td>
-   <td style="width: 25%; vertical-align: top;">Infectious Diseases Modeling </td>
-  <td style="width: 25%; vertical-align: top;"> Large Language Model </td>
+   <td style="width: 25%; vertical-align: top;font-weight: bold; background-color: #f0f0f0; color: #333;">Infectious Diseases Modeling </td>
+  <td style="width: 25%; vertical-align: top;font-weight: bold; background-color: #f0f0f0; color: #333;"> Large Language Model </td>
   </tr>
   <tr>
     <td style="width: 25%; vertical-align: top;">
