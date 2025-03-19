@@ -63,17 +63,17 @@ layout: default
 
 ## Academics Award
 
-
+<img src="award.jpeg" alt="image" height="200" >
 
 <h2>Workshop Certificate </h2>
 
 <table style="width:100%; border: none;">
   <tr>
-    <td style="width: 25%; vertical-align: top;">
+    <td style="width: 50%; vertical-align: top;">
       <img src="chatbot.jpeg" alt="image" height="200" > 
       <!-- <p>This content is on the left side.</p>-->
     </td>
-    <td style="width: 75%; vertical-align: middle; text-align: center;">
+    <td style="width: 50%; vertical-align: middle; text-align: center;">
       <img src="machine learning.jpeg" alt="image" height="200" > 
     <!-- <h2>Détagnon Bernic GBAGUIDI</h2>
       <a href="https://drive.google.com/file/d/1bibd5lA8wqe9od7XY4CWxa3caT_g-IYa/view?usp=sharing" target="_blank">Loot at my CV</a>
@@ -81,6 +81,32 @@ layout: default
     </td>
   </tr>
 </table>
+
+
+## Events
+
+### Student Speaker at the 9th AIMS Rwanda Graduation Ceremony
+<img src="student speaker.jpeg" alt="image" height="200" >
+
+<h3>Attending the MIM SOCIETY, 8th Pan-African Malaria Conference</h3>
+<table style="width:100%; border: none;">
+  <tr>
+    <td style="width: 50%; vertical-align: top;">
+      <img src="MIM2.jpg" alt="image" height="200" > 
+      <!-- <p>This content is on the left side.</p>-->
+    </td>
+    <td style="width: 50%; vertical-align: middle; text-align: center;">
+      <img src="MIM1.jpeg" alt="image" height="200" > 
+    <!-- <h2>Détagnon Bernic GBAGUIDI</h2>
+      <a href="https://drive.google.com/file/d/1bibd5lA8wqe9od7XY4CWxa3caT_g-IYa/view?usp=sharing" target="_blank">Loot at my CV</a>
+      -->
+    </td>
+  </tr>
+</table>
+
+
+
+
 
 
 
