@@ -62,6 +62,22 @@ layout: default
 </table>
 
 
+<h2>Workshop Certificate </h2>
+
+<table style="width:100%; border: none;">
+  <tr>
+    <td style="width: 25%; vertical-align: top;">
+      <img src="picAIMS.png" alt="image" height="200" > 
+      <!-- <p>This content is on the left side.</p>-->
+    </td>
+    <td style="width: 75%; vertical-align: middle; text-align: center;">
+      <h2>Détagnon Bernic GBAGUIDI</h2>
+      <a href="https://drive.google.com/file/d/1bibd5lA8wqe9od7XY4CWxa3caT_g-IYa/view?usp=sharing" target="_blank">Loot at my CV</a>
+    </td>
+  </tr>
+</table>
+
+
 
 <!--[image](picAIMS.png)
 
