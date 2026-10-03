@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Detagnon Bernic Gbaguidi</title>
+<meta name="description" content="Detagnon Bernic Gbaguidi, PhD student in Mathematical Modeling at the Rochester Institute of Technology. Category theory for machine learning, HIV and malaria research, statistical modeling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F2A44;
+    --navy-2: #173A5C;
+    --blue: #1F5F8B;
+    --sky: #9CC3E0;
+    --ochre: #D4A23C;
+    --teal: #3E8E8A;
+    --paper: #F6F7F4;
+    --mist: #E6ECEF;
+    --ink: #14212E;
+    --muted: #586472;
+    --rule: #D3DADF;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 19px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--navy); }
+  a:focus-visible { outline: 2px solid var(--ochre); outline-offset: 3px; border-radius: 2px; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+  h2 { font-weight: 400; font-size: clamp(32px, 4.2vw, 50px); line-height: 1.08; letter-spacing: -0.012em; margin: 0 0 14px; }
+  h3 { font-weight: 500; font-size: 25px; line-height: 1.22; margin: 0 0 10px; }
+  .kicker { font-family: var(--sans); font-size: 14px; font-weight: 500; color: var(--blue); margin: 0 0 10px; }
+  .intro { color: var(--muted); max-width: 38em; margin: 0 0 52px; }
+  section { padding: 96px 0; }
+
+  /* ---------------- top bar ---------------- */
+  .bar { position: sticky; top: 0; z-index: 20; background: rgba(15, 42, 68, 0.94); backdrop-filter: blur(8px); color: #fff; }
+  .bar .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; gap: 24px; }
+  .mark { color: #fff; text-decoration: none; font-style: italic; font-size: 20px; white-space: nowrap; }
+  .mark:hover { color: var(--ochre); }
+  .bar nav { display: flex; gap: 22px; font-family: var(--sans); font-size: 14px; }
+  .bar nav a { color: rgba(255,255,255,0.75); text-decoration: none; }
+  .bar nav a:hover { color: #fff; }
+
+  /* ---------------- hero ---------------- */
+  .hero { position: relative; background: var(--navy); color: #fff; overflow: hidden; padding: 84px 0 0; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; opacity: 0.06; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1'%3E%3Ccircle cx='20' cy='20' r='2.5' fill='%23ffffff'/%3E%3Ccircle cx='80' cy='20' r='2.5' fill='%23ffffff'/%3E%3Ccircle cx='20' cy='80' r='2.5' fill='%23ffffff'/%3E%3Ccircle cx='80' cy='80' r='2.5' fill='%23ffffff'/%3E%3Cpath d='M26 20h48M20 26v48M80 26v48M26 80h48'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero .grid { position: relative; display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
+  .hero .where { font-family: var(--sans); font-size: 14px; color: var(--sky); margin: 0 0 18px; }
+  .hero h1 { font-weight: 400; font-size: clamp(46px, 6.4vw, 82px); line-height: 1.0; letter-spacing: -0.018em; margin: 0 0 26px; }
+  .hero h1 em { color: var(--ochre); }
+  .hero .lede { font-size: 22px; line-height: 1.5; max-width: 32em; margin: 0 0 30px; color: rgba(255,255,255,0.9); }
+  .btns { display: flex; flex-wrap: wrap; gap: 10px; font-family: var(--sans); font-size: 14px; }
+  .btns a { text-decoration: none; padding: 9px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.35); color: #fff; }
+  .btns a:hover { border-color: var(--ochre); color: var(--ochre); }
+  .btns a.solid { background: var(--ochre); border-color: var(--ochre); color: var(--navy); font-weight: 600; }
+  .btns a.solid:hover { background: #fff; border-color: #fff; color: var(--navy); }
+
+  .diagram { background: var(--navy-2); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; padding: 26px 26px 18px; }
+  .diagram svg { width: 100%; height: auto; display: block; }
+  .diagram .obj { font-family: var(--serif); font-size: 22px; fill: #fff; }
+  .diagram .lab { font-family: var(--serif); font-style: italic; font-size: 18px; fill: var(--sky); }
+  .diagram .arr { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+  .diagram .arr.f { stroke: var(--sky); }
+  .diagram .arr.k { stroke: var(--ochre); }
+  .diagram figcaption { font-style: italic; font-size: 15px; color: rgba(255,255,255,0.65); margin-top: 8px; }
+  figure { margin: 0; }
+  .draw { stroke-dasharray: 260; stroke-dashoffset: 260; animation: draw 1.1s ease forwards; }
+  .d2 { animation-delay: .35s; } .d3 { animation-delay: .7s; } .d4 { animation-delay: 1.05s; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+
+  .now { position: relative; margin-top: 64px; border-top: 1px solid rgba(255,255,255,0.14); }
+  .now .wrap { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .now div.cell { padding: 22px 26px 26px 0; }
+  .now div.cell + div.cell { padding-left: 26px; border-left: 1px solid rgba(255,255,255,0.14); }
+  .now .label { font-family: var(--sans); font-size: 13px; color: var(--ochre); margin-bottom: 4px; }
+  .now p { margin: 0; font-size: 17px; color: rgba(255,255,255,0.88); line-height: 1.45; }
+  .now a { color: #fff; }
+
+  /* ---------------- about ---------------- */
+  .about-grid { display: grid; grid-template-columns: 240px 1fr; gap: 56px; align-items: start; }
+  .portrait { width: 240px; aspect-ratio: 4/5; border-radius: 6px; overflow: hidden; background: var(--mist); display: grid; place-items: center; font-size: 60px; font-style: italic; color: var(--blue); box-shadow: 14px 14px 0 var(--ochre); }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .about-grid p { max-width: 36em; margin: 0 0 18px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; font-family: var(--sans); font-size: 13px; }
+  .chips span { padding: 5px 12px; border-radius: 999px; background: var(--mist); color: var(--navy); }
+
+  /* ---------------- research chronology ---------------- */
+  .research { background: var(--mist); }
+  .chron { position: relative; }
+  .chron::before { content: ""; position: absolute; left: 118px; top: 0; bottom: 0; width: 2px; background: linear-gradient(var(--ochre), var(--blue) 30%, var(--rule)); }
+  .step { position: relative; display: grid; grid-template-columns: 100px 1fr; gap: 56px; margin-bottom: 64px; }
+  .step:last-child { margin-bottom: 0; }
+  .when { font-family: var(--sans); font-size: 13px; color: var(--muted); text-align: right; padding-top: 6px; line-height: 1.35; }
+  .when strong { display: block; font-size: 15px; color: var(--navy); font-weight: 600; }
+  .step::after { content: ""; position: absolute; left: 112px; top: 8px; width: 14px; height: 14px; border-radius: 50%; background: var(--paper); border: 3px solid var(--blue); }
+  .step.feat::after { background: var(--ochre); border-color: var(--ochre); box-shadow: 0 0 0 6px rgba(212,162,60,0.25); }
+
+  .card { display: grid; grid-template-columns: 1fr 1.05fr; gap: 0; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 0 var(--rule); }
+  .card .art { background: var(--paper); display: flex; align-items: center; justify-content: center; padding: 22px; border-right: 1px solid var(--rule); }
+  .card .art svg { width: 100%; height: auto; display: block; }
+  .card .art svg text { font-family: var(--serif); font-size: 13px; fill: var(--muted); }
+  .card .body { padding: 30px 32px 30px; }
+  .card .who { font-family: var(--sans); font-size: 13px; color: var(--muted); margin: 0 0 8px; }
+  .card p { font-size: 17px; margin: 0 0 14px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--sans); font-size: 12px; }
+  .tags span { border: 1px solid var(--rule); border-radius: 999px; padding: 3px 10px; color: var(--muted); }
+  .badge { display: inline-block; font-family: var(--sans); font-size: 12px; font-weight: 600; padding: 4px 11px; border-radius: 999px; margin-bottom: 12px; }
+  .badge.gold { background: rgba(212,162,60,0.18); color: #8A6414; }
+  .badge.teal { background: rgba(62,142,138,0.15); color: #2B6764; }
+  .badge.blue { background: rgba(31,95,139,0.12); color: var(--blue); }
+
+  /* featured card (category theory) */
+  .step.feat .card { background: var(--navy); color: #fff; grid-template-columns: 1.1fr 1fr; }
+  .step.feat .card .art { background: var(--navy-2); border-right: 1px solid rgba(255,255,255,0.1); }
+  .step.feat .card .art svg text { fill: var(--sky); }
+  .step.feat .card .who { color: var(--sky); }
+  .step.feat .card h3 { font-size: 30px; }
+  .step.feat .card p { color: rgba(255,255,255,0.88); }
+  .step.feat .card a { color: var(--ochre); }
+  .step.feat .badge.gold { background: var(--ochre); color: var(--navy); }
+  .step.feat .tags span { border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); }
+
+  /* ---------------- built ---------------- */
+  .built-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .tile { background: #fff; border-radius: 8px; padding: 28px 26px; border-top: 4px solid var(--teal); box-shadow: 0 1px 0 var(--rule); }
+  .tile:nth-child(2) { border-top-color: var(--ochre); }
+  .tile:nth-child(3) { border-top-color: var(--blue); }
+  .tile .sym { font-size: 28px; font-style: italic; color: var(--teal); margin-bottom: 10px; line-height: 1; }
+  .tile:nth-child(2) .sym { color: var(--ochre); }
+  .tile:nth-child(3) .sym { color: var(--blue); }
+  .tile p { font-size: 17px; color: var(--muted); margin: 0 0 12px; }
+  .tile h3 { font-size: 22px; }
+
+  /* ---------------- publications / talks ---------------- */
+  .pubs-sec { background: #fff; }
+  .two { display: grid; grid-template-columns: 1.35fr 1fr; gap: 64px; }
+  .list { list-style: none; padding: 0; margin: 0; }
+  .list li { display: grid; grid-template-columns: 84px 1fr; gap: 18px; padding: 20px 0; border-top: 1px solid var(--rule); }
+  .list li:last-child { border-bottom: 1px solid var(--rule); }
+  .list .yr { font-family: var(--sans); font-size: 13px; color: var(--muted); padding-top: 5px; }
+  .list .t { display: block; font-size: 20px; line-height: 1.35; margin-bottom: 4px; }
+  .list .m { font-size: 16px; color: var(--muted); }
+  .me { font-weight: 600; color: var(--ink); }
+  .sub { margin-top: 48px; }
+
+  /* ---------------- path ---------------- */
+  .path-sec { background: var(--paper); }
+  .route { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; margin-top: 10px; }
+  .route::before { content: ""; position: absolute; left: 0; right: 0; top: 11px; height: 2px; background: linear-gradient(90deg, var(--teal), var(--blue), var(--ochre)); }
+  .stop { position: relative; padding: 38px 22px 0 0; }
+  .stop::before { content: ""; position: absolute; top: 4px; left: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--paper); border: 3px solid var(--blue); }
+  .stop:last-child::before { background: var(--ochre); border-color: var(--ochre); }
+  .stop .place { font-family: var(--sans); font-size: 13px; color: var(--muted); }
+  .stop h3 { font-size: 21px; margin: 4px 0 6px; }
+  .stop p { font-size: 16px; color: var(--muted); margin: 0; }
+
+  /* ---------------- footer ---------------- */
+  footer { background: var(--navy); color: rgba(255,255,255,0.8); padding: 64px 0 56px; font-size: 16px; }
+  footer .cols { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; }
+  footer h4 { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ochre); margin: 0 0 10px; }
+  footer ul { list-style: none; margin: 0; padding: 0; }
+  footer li { margin-bottom: 4px; }
+  footer a { color: #fff; }
+  footer .big { font-size: 26px; font-style: italic; color: #fff; margin: 0 0 8px; line-height: 1.2; }
+  .fine { margin-top: 44px; font-family: var(--sans); font-size: 12px; color: rgba(255,255,255,0.5); }
+
+  /* ---------------- responsive ---------------- */
+  @media (max-width: 960px) {
+    .hero .grid, .two, footer .cols, .card, .step.feat .card { grid-template-columns: 1fr; }
+    .card .art, .step.feat .card .art { border-right: 0; border-bottom: 1px solid var(--rule); }
+    .built-grid { grid-template-columns: 1fr; }
+    .now .wrap { grid-template-columns: 1fr; }
+    .now div.cell + div.cell { padding-left: 0; border-left: 0; border-top: 1px solid rgba(255,255,255,0.14); }
+    .route { grid-template-columns: 1fr 1fr; row-gap: 32px; }
+    .route::before { display: none; }
+    .bar nav { display: none; }
+  }
+  @media (max-width: 680px) {
+    body { font-size: 18px; }
+    section { padding: 70px 0; }
+    .about-grid { grid-template-columns: 1fr; }
+    .portrait { width: 200px; }
+    .chron::before { left: 7px; }
+    .step { grid-template-columns: 1fr; gap: 12px; padding-left: 32px; margin-bottom: 48px; }
+    .step::after { left: 0; }
+    .when { text-align: left; padding-top: 2px; }
+    .when strong { display: inline; margin-right: 6px; }
+    .route { grid-template-columns: 1fr; }
+    .list li { grid-template-columns: 1fr; gap: 4px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .draw { animation: none; stroke-dashoffset: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="mark" href="#top">D. B. Gbaguidi</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#built">Built</a>
+      <a href="#publications">Publications</a>
+      <a href="#path">Path</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="wrap grid">
+    <div>
+      <p class="where">PhD student in Mathematical Modeling, Rochester Institute of Technology</p>
+      <h1>Detagnon Bernic <em>Gbaguidi</em></h1>
+      <p class="lede">I study how category theory can change the way we build and trust machine learning models, with applications in biomedicine and public health.</p>
+      <div class="btns">
+        <a class="solid" href="#research">See my research</a>
+        <a href="Gbaguidi_CV.pdf">CV (PDF)</a>
+        <a href="mailto:dg7366@g.rit.edu">Email</a>
+        <a href="https://github.com/Detagnon2000">GitHub</a>
+      </div>
+    </div>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 420 300" role="img" aria-labelledby="dgTitle">
+        <title id="dgTitle">A commutative square: a map between datasets and the corresponding map between models</title>
+        <defs>
+          <marker id="hw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="#ffffff" stroke-width="1.4"/></marker>
+          <marker id="hs" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="#9CC3E0" stroke-width="1.4"/></marker>
+          <marker id="ho" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="#D4A23C" stroke-width="1.4"/></marker>
+        </defs>
+        <text class="obj" x="60" y="72" text-anchor="middle">Data</text>
+        <text class="obj" x="350" y="72" text-anchor="middle">Data′</text>
+        <text class="obj" x="60" y="242" text-anchor="middle">Model</text>
+        <text class="obj" x="350" y="242" text-anchor="middle">Model′</text>
+        <path class="arr draw" d="M105 66 H300" marker-end="url(#hw)"/>
+        <path class="arr draw d2 f" d="M60 88 V214" marker-end="url(#hs)"/>
+        <path class="arr draw d2 f" d="M350 88 V214" marker-end="url(#hs)"/>
+        <path class="arr draw d3 k" d="M115 236 H290" marker-end="url(#ho)"/>
+        <text class="lab" x="203" y="54" text-anchor="middle">h</text>
+        <text class="lab" x="44" y="156" text-anchor="end">F</text>
+        <text class="lab" x="366" y="156">F</text>
+        <text class="lab" x="203" y="226" text-anchor="middle">F(h)</text>
+        <path class="arr draw d4" d="M190 140 a14 14 0 1 1 10 13" marker-end="url(#hw)" stroke-width="1.2"/>
+      </svg>
+      <figcaption>A model built functorially transforms consistently when its data are transformed.</figcaption>
+    </figure>
+  </div>
+
+  <div class="now">
+    <div class="wrap">
+      <div class="cell">
+        <div class="label">Now</div>
+        <p>Developing categorical foundations for machine learning in the Data Science Research Group at RIT.</p>
+      </div>
+      <div class="cell">
+        <div class="label">Coming soon</div>
+        <p>Paper on HIV-1 envelope correlates of neutralization, under review at <em>EBioMedicine</em>.</p>
+      </div>
+      <div class="cell">
+        <div class="label">Recent talk</div>
+        <p><a href="category_theory_ml_slides.pdf"><em>Categorical Foundations of Machine Learning</em></a>, group seminar, October 2026.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="portrait">
+      <img src="gbaguidi.jpg" alt="Portrait of Detagnon Bernic Gbaguidi" onerror="this.remove()">
+      DG
+    </div>
+    <div>
+      <p class="kicker">About</p>
+      <h2>From pure mathematics to models that matter.</h2>
+      <p>I am a second-year PhD student in Mathematical Modeling in the School of Mathematics and Statistics at RIT, advised by Prof. Ernest Fokoué, and a member of the <a href="https://dsrg-praveda.netlify.app/">Data Science Research Group</a>.</p>
+      <p>I trained in pure mathematics in Benin, in statistics for life sciences at ICMPA, and in mathematical sciences at AIMS Rwanda. Along the way I have measured the impact of malaria interventions, predicted HIV neutralization from viral sequences, and built an AI exam generator now in production in Benin.</p>
+      <p>The question behind all of it: what structure should a model preserve, and what do we gain when it does?</p>
+      <div class="chips">
+        <span>Category theory</span><span>Machine learning</span><span>Infectious disease</span><span>Statistical modeling</span><span>Public health</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESEARCH (chronology) ================= -->
+<section id="research" class="research">
+  <div class="wrap">
+    <p class="kicker">Research</p>
+    <h2>What I work on, newest first.</h2>
+    <p class="intro">Each illustration is a schematic drawn from the mathematics of its project, not data.</p>
+
+    <div class="chron">
+
+      <!-- 1. Category theory -->
+      <div class="step feat">
+        <div class="when"><strong>2025</strong>to now</div>
+        <article class="card">
+          <div class="art">
+            <svg viewBox="0 0 400 220" role="img" aria-label="Two lenses composed: forward maps left to right, backward maps right to left">
+              <rect x="90" y="45" width="72" height="130" rx="4" fill="none" stroke="#ffffff" stroke-opacity=".8"/>
+              <rect x="240" y="45" width="72" height="130" rx="4" fill="none" stroke="#ffffff" stroke-opacity=".8"/>
+              <line x1="25" y1="82" x2="90" y2="82" stroke="#9CC3E0" stroke-width="2.4"/>
+              <line x1="162" y1="82" x2="240" y2="82" stroke="#9CC3E0" stroke-width="2.4"/>
+              <line x1="312" y1="82" x2="378" y2="82" stroke="#9CC3E0" stroke-width="2.4"/>
+              <line x1="25" y1="138" x2="90" y2="138" stroke="#D4A23C" stroke-width="2.4"/>
+              <line x1="162" y1="138" x2="240" y2="138" stroke="#D4A23C" stroke-width="2.4"/>
+              <line x1="312" y1="138" x2="378" y2="138" stroke="#D4A23C" stroke-width="2.4"/>
+              <path d="M368 76 l10 6 l-10 6" fill="none" stroke="#9CC3E0" stroke-width="2"/>
+              <path d="M35 132 l-10 6 l10 6" fill="none" stroke="#D4A23C" stroke-width="2"/>
+              <text x="126" y="114" text-anchor="middle" font-style="italic">(f, f*)</text>
+              <text x="276" y="114" text-anchor="middle" font-style="italic">(g, g*)</text>
+              <text x="201" y="72" text-anchor="middle">forward pass</text>
+              <text x="201" y="160" text-anchor="middle">gradients</text>
+            </svg>
+          </div>
+          <div class="body">
+            <span class="badge gold">Current PhD research</span>
+            <p class="who">Data Science Research Group, RIT, with Prof. Ernest Fokoué</p>
+            <h3>Category theory for machine learning</h3>
+            <p>A model is a morphism; backpropagation is a functor into a category of lenses; a trainable layer is a parameterized lens. I study what this language makes precise, what it lets us prove once and reuse, and where it can change how models are designed.</p>
+            <p><a href="category_theory_ml_slides.pdf">Seminar slides, October 2026</a></p>
+            <div class="tags"><span>Lenses</span><span>Para construction</span><span>Backpropagation</span><span>Functors</span></div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 2. HIV -->
+      <div class="step">
+        <div class="when"><strong>2025</strong>Tübingen</div>
+        <article class="card">
+          <div class="art">
+            <svg viewBox="0 0 400 200" role="img" aria-label="Long sequencing reads aligned to an envelope gene, feeding a classifier">
+              <line x1="25" y1="45" x2="270" y2="45" stroke="#14212E" stroke-width="3"/>
+              <line x1="35" y1="72" x2="220" y2="72" stroke="#1F5F8B" stroke-width="2.4"/>
+              <line x1="58" y1="92" x2="262" y2="92" stroke="#1F5F8B" stroke-width="2.4"/>
+              <line x1="30" y1="112" x2="240" y2="112" stroke="#1F5F8B" stroke-width="2.4"/>
+              <line x1="70" y1="132" x2="266" y2="132" stroke="#1F5F8B" stroke-width="2.4"/>
+              <circle cx="120" cy="92" r="5" fill="#D4A23C"/><circle cx="182" cy="112" r="5" fill="#D4A23C"/><circle cx="96" cy="72" r="5" fill="#D4A23C"/>
+              <rect x="300" y="74" width="74" height="58" rx="4" fill="#3E8E8A" fill-opacity=".12" stroke="#3E8E8A"/>
+              <text x="337" y="108" text-anchor="middle">TabPFN</text>
+              <line x1="272" y1="103" x2="298" y2="103" stroke="#14212E"/>
+              <text x="25" y="32">HIV-1 envelope gene</text>
+              <text x="300" y="158">neutralized?</text>
+            </svg>
+          </div>
+          <div class="body">
+            <span class="badge teal">Paper under review, EBioMedicine</span>
+            <p class="who">University of Tübingen, with Prof. Nico Pfeifer</p>
+            <h3>HIV-1 envelope and neutralizing antibodies</h3>
+            <p>Using long-read sequencing of the HIV-1 envelope, I applied TabPFN, a transformer-based model for tabular data, to predict autologous neutralization status, building the pipeline from feature engineering to evaluation. The resulting paper, on which I am third author, is under review.</p>
+            <div class="tags"><span>HIV-1</span><span>Long-read sequencing</span><span>TabPFN</span></div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 3. Civic discourse -->
+      <div class="step">
+        <div class="when"><strong>Ongoing</strong>Rochester</div>
+        <article class="card">
+          <div class="art">
+            <svg viewBox="0 0 400 200" role="img" aria-label="Topic proportions as horizontal bars">
+              <rect x="140" y="34" width="210" height="18" rx="3" fill="#1F5F8B"/>
+              <rect x="140" y="66" width="160" height="18" rx="3" fill="#3E8E8A"/>
+              <rect x="140" y="98" width="118" height="18" rx="3" fill="#D4A23C"/>
+              <rect x="140" y="130" width="84" height="18" rx="3" fill="#1F5F8B" fill-opacity=".55"/>
+              <rect x="140" y="162" width="52" height="18" rx="3" fill="#3E8E8A" fill-opacity=".55"/>
+              <text x="128" y="48" text-anchor="end">topic 1</text>
+              <text x="128" y="80" text-anchor="end">topic 2</text>
+              <text x="128" y="112" text-anchor="end">topic 3</text>
+              <text x="128" y="144" text-anchor="end">topic 4</text>
+              <text x="128" y="176" text-anchor="end">topic 5</text>
+            </svg>
+          </div>
+          <div class="body">
+            <span class="badge blue">Paper in preparation</span>
+            <p class="who">Text data and public discourse</p>
+            <h3>Civic discourse in Rochester</h3>
+            <p>Unsupervised topic modeling of X/Twitter posts to describe what a city talks about, keeping only findings that agree across several models.</p>
+            <div class="tags"><span>Topic models</span><span>Text data</span><span>Civic data</span></div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 4. Malaria -->
+      <div class="step">
+        <div class="when"><strong>2023</strong>to 2024</div>
+        <article class="card">
+          <div class="art">
+            <svg viewBox="0 0 400 200" role="img" aria-label="Interrupted time series: a trend with a drop after an intervention">
+              <line x1="25" y1="172" x2="380" y2="172" stroke="#D3DADF"/>
+              <rect x="215" y="24" width="165" height="148" fill="#3E8E8A" fill-opacity=".07"/>
+              <line x1="215" y1="24" x2="215" y2="172" stroke="#D4A23C" stroke-width="1.6" stroke-dasharray="4 4"/>
+              <polyline fill="none" stroke="#14212E" stroke-width="1.8" points="30,92 50,80 70,97 90,74 110,90 130,72 150,86 170,68 190,82 215,66"/>
+              <polyline fill="none" stroke="#1F5F8B" stroke-width="2" points="215,112 235,122 255,110 275,128 295,120 315,134 335,126 355,140 375,132"/>
+              <line x1="215" y1="66" x2="375" y2="42" stroke="#14212E" stroke-dasharray="3 4"/>
+              <text x="222" y="40">campaign starts</text>
+              <text x="300" y="84">counterfactual</text>
+            </svg>
+          </div>
+          <div class="body">
+            <span class="badge blue">MSc thesis, AIMS Rwanda</span>
+            <p class="who">With the National Malaria Control Program, Benin</p>
+            <h3>Seasonal malaria chemoprevention in Benin</h3>
+            <p>A retrospective evaluation of SMC campaigns: interrupted time series models on national surveillance data compare observed malaria cases with what the pre-campaign trend predicts.</p>
+            <div class="tags"><span>Malaria</span><span>Interrupted time series</span><span>Public health</span></div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 5. Agrivoltaics -->
+      <div class="step">
+        <div class="when"><strong>Modeling</strong>project</div>
+        <article class="card">
+          <div class="art">
+            <svg viewBox="0 0 400 200" role="img" aria-label="Low sun rays, tilted solar panels and the shadows they cast on crop rows">
+              <circle cx="45" cy="45" r="17" fill="#D4A23C" fill-opacity=".25" stroke="#D4A23C" stroke-width="2"/>
+              <line x1="66" y1="55" x2="362" y2="150" stroke="#D4A23C" stroke-dasharray="3 5"/>
+              <line x1="66" y1="40" x2="362" y2="120" stroke="#D4A23C" stroke-dasharray="3 5"/>
+              <line x1="150" y1="100" x2="202" y2="79" stroke="#14212E" stroke-width="3.5"/>
+              <line x1="260" y1="100" x2="312" y2="79" stroke="#14212E" stroke-width="3.5"/>
+              <line x1="176" y1="90" x2="176" y2="170" stroke="#14212E"/>
+              <line x1="286" y1="90" x2="286" y2="170" stroke="#14212E"/>
+              <rect x="190" y="166" width="56" height="7" fill="#14212E" opacity=".18"/>
+              <rect x="300" y="166" width="56" height="7" fill="#14212E" opacity=".18"/>
+              <g fill="#3E8E8A"><circle cx="160" cy="170" r="5"/><circle cx="216" cy="170" r="5"/><circle cx="252" cy="170" r="5"/><circle cx="330" cy="170" r="5"/></g>
+              <text x="210" y="194" text-anchor="middle">shadow geometry at high latitude</text>
+            </svg>
+          </div>
+          <div class="body">
+            <span class="badge blue">MATLAB pipeline</span>
+            <p class="who">Agriculture and energy</p>
+            <h3>Agrivoltaic crop placement in Alaska</h3>
+            <p>Where should spinach grow under solar panels when the sun stays low? Corrected shading geometry, bolting submodels, and yield optimization at a high-latitude site.</p>
+            <div class="tags"><span>Optimization</span><span>Geometry</span><span>Agriculture</span></div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= BUILT ================= -->
+<section id="built">
+  <div class="wrap">
+    <p class="kicker">Built and deployed</p>
+    <h2>Mathematics that ships.</h2>
+    <p class="intro">Tools I have taken from an idea to something people can use.</p>
+    <div class="built-grid">
+      <div class="tile">
+        <div class="sym">∑</div>
+        <h3><a href="https://mathiis.com">Mathiis</a></h3>
+        <p>An AI math exam generator for the Beninese secondary curriculum, from 6ème to Terminale, now in production. Retrieval-augmented generation with a separate checking step, under tight limits on cost and response time.</p>
+        <div class="tags"><span>RAG</span><span>LLMs</span><span>Education</span></div>
+      </div>
+      <div class="tile">
+        <div class="sym">x ↦ x′</div>
+        <h3>Virtual try-on</h3>
+        <p>A prototype that lets small clothing sellers in West Africa show garments on customers, delivered through a WhatsApp product-link flow.</p>
+        <div class="tags"><span>Computer vision</span><span>Hugging Face</span><span>WhatsApp</span></div>
+      </div>
+      <div class="tile">
+        <div class="sym">dI/dt</div>
+        <h3>Teaching tools and notebooks</h3>
+        <p>An <a href="https://z292kc-bernic-gbaguidi.shinyapps.io/Simulation_SIR_model/">interactive SIR epidemic simulator</a>, plus open notebooks on <a href="https://github.com/Detagnon2000/Machine-Learning">machine learning</a>, <a href="https://github.com/Detagnon2000/Infectious-Diseases-Modeling">disease modeling</a> and <a href="https://github.com/Detagnon2000/Genomics-and-Bioinformatic">genomics</a>.</p>
+        <div class="tags"><span>Shiny</span><span>R</span><span>Python</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PUBLICATIONS + TALKS ================= -->
+<section id="publications" class="pubs-sec">
+  <div class="wrap two">
+    <div>
+      <p class="kicker">Publications</p>
+      <h2>Papers.</h2>
+      <ol class="list">
+        <li>
+          <span class="yr">2026</span>
+          <div>
+            <span class="t">Long-read sequencing reveals HIV-1 envelope correlates of autologous neutralizing antibody responses</span>
+            <span class="m">F. Hartkopf, A. Robitaille, <span class="me">D. B. Gbaguidi</span>, et al. Under review, <em>EBioMedicine</em>.</span>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2026</span>
+          <div>
+            <span class="t">Digital traces of community discourse: unsupervised topic modeling of X/Twitter posts in Rochester, NY</span>
+            <span class="m"><span class="me">D. B. Gbaguidi</span>, et al. In preparation.</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+    <div>
+      <p class="kicker">Talks</p>
+      <h2>Speaking.</h2>
+      <ol class="list">
+        <li>
+          <span class="yr">Oct 2026</span>
+          <div>
+            <span class="t">Categorical foundations of machine learning: an introduction</span>
+            <span class="m">Data Science Research Group seminar, RIT. <a href="category_theory_ml_slides.pdf">Slides</a></span>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2024</span>
+          <div>
+            <span class="t">Student speaker</span>
+            <span class="m">9th AIMS Rwanda graduation ceremony, Kigali.</span>
+          </div>
+        </li>
+      </ol>
+      <div class="sub">
+        <p class="kicker">Teaching</p>
+        <ol class="list">
+          <li>
+            <span class="yr">2025 to now</span>
+            <div>
+              <span class="t">Graduate Teaching Assistant, RIT</span>
+              <span class="m">Probability and Statistics; Calculus.</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PATH ================= -->
+<section id="path" class="path-sec">
+  <div class="wrap">
+    <p class="kicker">Path</p>
+    <h2>Benin, Rwanda, Germany, New York.</h2>
+    <p class="intro">Four places, each adding a layer: proof, data, biology, and structure.</p>
+    <div class="route">
+      <div class="stop">
+        <span class="place">Benin, 2017 to 2023</span>
+        <h3>Pure mathematics, then statistics</h3>
+        <p>BSc in Pure Mathematics, University of Abomey-Calavi. Master 1 in Statistics for Life Sciences, ICMPA.</p>
+      </div>
+      <div class="stop">
+        <span class="place">Rwanda and Benin, 2023 to 2024</span>
+        <h3>Malaria modeling</h3>
+        <p>MSc at AIMS Rwanda, with the AIMS Exceptional Excellence Award. Internship at the National Malaria Control Program.</p>
+      </div>
+      <div class="stop">
+        <span class="place">Germany, 2025</span>
+        <h3>Machine learning for HIV</h3>
+        <p>Research internship with Prof. Nico Pfeifer at the University of Tübingen.</p>
+      </div>
+      <div class="stop">
+        <span class="place">New York, 2025 to now</span>
+        <h3>PhD at RIT</h3>
+        <p>Mathematical Modeling, advised by Prof. Ernest Fokoué. Graduate Teaching Assistant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <p class="big">Happy to talk about research, collaborations, or category theory.</p>
+        <p>School of Mathematics and Statistics, College of Science<br>Rochester Institute of Technology, Rochester, New York</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:dg7366@g.rit.edu">dg7366@g.rit.edu</a></li>
+          <li><a href="https://github.com/Detagnon2000">GitHub</a></li>
+          <li><a href="Gbaguidi_CV.pdf">CV (PDF)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Group</h4>
+        <ul>
+          <li><a href="https://dsrg-praveda.netlify.app/">Data Science Research Group</a></li>
+          <li>Seminar on Fridays, 3:00 to 5:00 pm</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">© 2026 Detagnon Bernic Gbaguidi</p>
+  </div>
+</footer>
+
+</body>
+</html>
